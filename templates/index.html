@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Number QR Code Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Phone Number QR Code Generator</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter phone number" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Refresh</button>
+        </form>
+        {% if qr_data %}
+            <h3>QR Code:</h3>
+            <img src="data:image/png;base64,{{ qr_data }}" alt="QR Code">
+        {% endif %}
+    </div>
+</body>
+</html>
